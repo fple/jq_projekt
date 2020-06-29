@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>계절별 가이드 - 겨울</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/겨울.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>계절별 가이드 : 겨울</h1>
+                </div>
+                <div class="col-lg-10">
+                    <h2>마음까지 따뜻해지는 음식, 후끈한 목욕, 매력적인 일루미네이션</h2>
+                </div>
+            </div>
+        </div>ㅋ
+    </div>
+
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <p>
+                        겨울에 도쿄에 오시면 추위를 피하기 위한 목도리나 장갑, 재킷이 필요합니다.
+                        하지만 이 겨울에 익숙해진다면 겨울 특유의 깨끗한 경치와 힐링이 되는 음식을 즐길수 있고,
+                        몇백년동안 지속되어온 행사들이 열리는 계절이 바로 겨울이라는 것을 아시게 될겁니다.
+                        깨끗하고 상쾌한 공기, 넓고 푸른 하늘, 비가 거의 내리지 않는 날씨 덕분에 도심과 주변 풍경이 더 아름다워집니다.
+                    </p>
+                </div>
+                <br>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            도쿄의 겨울의 평균 기온은 0 ~ 8℃입니다. 두꺼운 재킷이나 목도리등 으로 추위을 이겨낼 대책을 세우세요.
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            추위 대책을 세웠는데도 부족하다면 근처 편의점에서 '손난로'를 구매해 보세요.
+                            <br /><br />
+                        </li>
+                        <li>
+                            겨울은 습도가 낮고 공기가 맑습니다. 이 시기에 도쿄 스카이트리에서는 후지산도 잘 보입니다.
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>마음까지 따뜻해지는 다정한 음식</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        일본요리는 계절에 따라 다양하게 변합니다.
+                        여름에는 야외에서 즐기는 바비큐나 꼬치구이, 차가운 면요리 등이 인기가 있지만,
+                        겨울에는 얼큰한 맛의 조림이나 전골요리가 사람들의 사랑을 독차지합니다.
+                    </p>
+
+                    <h2>편안하게 ‘전골요리’를 즐기자</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        일본의 겨울 풍물시로도 유명한 푸짐한 ‘나베(전골)’ 요리도 꼭 한번 도전해 보세요.
+                        스모 선수들이 좋아하는 ‘잔코나베’에서부터 ‘김치전골’과 ‘곱창전골’ 등에 이르기까지 다양한 선택이 가능합니다.
+                    </p>
+
+                    <h2>고기나 야채 조림요리 테이크아웃</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        더 캐주얼한 거리음식을 즐기려면 다양한 종류의 ‘오뎅’을 드셔 보세요.
+                        생선으로 우려낸 맛국물에 푹 삶은 고기와 소시지, 계란, 무 등을 고를 수 있습니다.
+                        오뎅은 편의점이라면 기본적으로 어디서나 판매하고 있습니다.
+                        거리의 포장마차에서도 흔히 볼 수 있는 메뉴입니다.
+                    </p>
+                    <h2>환상적인 크리스마스 불빛이 연말 분위기 연출</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        크리스마스 시즌까지의 도쿄는 화려한 일루미네이션과 세련된 장식으로 활기가 넘칩니다.
+                        일본에서는 전통적으로 크리스마스보다 신정을 더 중시해 왔지만, 도시는 연말연시 기간 내내 고양된 분위기에 사로잡힙니다.
+                        인기 일루미네이션을 즐기시려면 도심부의 ‘카렛타 시오도메’, 신주쿠의 ‘도쿄 미드타운’, 오모테산도, 긴자, 나카메구로, 에
+                        비스의 거리를 방문하시면 됩니다.
+                    </p>
+                </div>
+                <div class="col-lg-11" style="margin:0 5% 0 5%">
+                    <img src="img/겨울본문1.jpg" width="45%" style="margin:0 1% 0 0; float:left;" />
+                    <img src="img/겨울본문2.jpg" width="45%" style="margin:0 0 0 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>편안한 입욕으로 겨울 추위를 날려버린다</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        일본에는 온천이나 입욕 문화가 뿌리내려 있기 때문에, 겨울은 전통적인 입욕을 즐길 수 있는 최적의 계절입니다.
+                        도쿄에는 수많은 대중탕이 있지만, 하코네나 닛코까지 조금만 나가면 최고의 온천 체험을 즐길 수 있습니다.
+                    </p>
+                </div>
+
+
+                <br />
+
+
+                <img src="img/온천.jpg" width="75%" style="margin:0 10% 0 10%;" />
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>축제</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        성대한 축제와 춤, 불꽃놀이는 여름을 즐겁게 만들지만, 겨울에도 흥미로운 풍습이나 이벤트가 많습니다.
+                    </p>
+                    <h2>새해 설날</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        여러분이 우연히도 설날을 끼고 일본 관광을 하게 되셨다면 1월 1일(오전 0시부터) ‘메이지진구 신사’에 가셔서 일본에서 가장 많은 인파가 몰리는
+                        ‘하쓰모데’(신사나 절에서 올리는 새해 첫 참배)’에 참가해 보세요.
+                        본당에 도착하면 시주함에 5엔짜리 동전을 넣고, 절을 하고(두 번), 손뼉을 치고(두 번) 행복을 기원합시다. 그리고 마지막으로 다시 한 번 절을 합니다.
+                    </p>
+                </div>
+
+                <img src="img/설날신사.jpg" width="75%" style="margin:0 10% 0 10%;" />
+
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>콩 뿌리기 축제</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        2월 3일은 공식적으로 겨울이 끝나는 날입니다.
+                        따라서 일본 사람들은 이 날을 축하하고 콩을 던져 악귀를 물리치는 ‘세쓰분’ 축제에 참가합니다.
+                        가장 큰 세쓰분 축제를 보려면 정오부터 오후 1시 사이에 도쿄 도심에 있는 ‘조조지 절’로 가 보세요.
+                        콩 뿌리기 체험은 물론 일본의 유명인도 만날 수 있고, 현지 노점에서 음식도 즐길 수 있습니다.
+                    </p>
+                </div>
+
+
+                <br />
+                <div class="col-lg-11" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

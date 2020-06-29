@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>아키하바라</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/아키바메인.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+
+        #scroll {
+            margin: 10% 10% 0 0;
+            font-size: 1.3em;
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>아키하바라</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <h2>
+                        독자적인 문화가 숨쉬는 활기 넘치는 전자상가
+                    </h2>
+                    <br />
+                    <p>
+                        제2차 세계대전 후 암시장의 중심지로 시작된 아키하바라 전자상가는 그 후 전세계에서 찾아오는 사람들에게
+                        각종 전기제품과 IT 제품을 판매하는 상점들이 즐비한 일본 테크놀로지의 집결지가 되었습니다. 최근에는 게임과 만화,
+                        애니메이션의 열광적인 팬, 소위 말하는 오타쿠의 문화 거점이기도 합니다. 아키하바라는 팝 아이돌과 코스플레이어 등 일본의 서브컬처를 각별히 사랑하는
+                        사람들의 성지입니다. 아키하바라 거리를 산책하면서 독자적인 문화를 체험해 봅시다.
+                </div>
+                <br />
+
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1592902710866!6m8!1m7!1sCAoSLEFGMVFpcE9uQWRuc19OZ3ZtamE4dXpMNVlrNVItbWRUSVJrTFlUM0ZLcURB!2m2!1d35.6986406!2d139.7714239!3f37.20790055950934!4f1.2817532464902968!5f0.4000000000000002" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            전자마트 및 부품전문점에서 면세를 이용하여 저렴하게 쇼핑하기
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            애니메이션의 성지를 직촬
+                            <br /><br />
+                        </li>
+                        <li>
+                            적극적으로 활동하는 팝 아이돌과 개성적인 의상으로 치장한 코스플레이어들과의 만남
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>교통편</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘아키하바라’역에는 JR 야마노테선, 게이힌 도호쿠선, 소부선 또는 도쿄메트로 히비야선을 이용하여 쉽게 찾아가실 수 있습니다.
+                    </p>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하네다 공항에서: 리무진버스로 50분, 전철로 45분.<br />
+                        나리타 공항에서: 리무진버스로 2시간, 전철로 1시간 30분.<br />
+                        신주쿠역에서: JR 소부선으로 아키하바라역까지 18분.<br />
+                        도쿄역에서: JR 야마노테선으로 아키하바라역까지 4분.<br />
+                    </p>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>암시장에서 전자상가로</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        제2차 세계대전 이후 일본에서 전기부품 노점상들이 모이는 암시장이 있었던 아키하바라 거리에는
+                        현재 전기제품과 관련된 온갖 물건들을 판매하는 정규 전기제품 판매점이 즐비합니다. 부품전문점이 늘어서 있고,
+                        라옥스나 요도바시 카메라 등과 같은 가전마트들이 격전을 벌이고 있습니다. ‘아키하바라 라디오회관’이나 ‘아키하바라 라디오센터’에는
+                        테크놀로지 부품과 캐릭터 관련 상품을 취급하는 매장이 많으며, 만화, 애니메이션, 팝 아이돌, 게임 등 각 매장마다 수많은 열성 팬들이
+                        발 디딜 틈도 없이 모여듭니다. 많은 매장에서 면세제도를 이용할 수 있기 때문에 알뜰한 쇼핑을 할 수 있습니다.
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/아키바1.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/아키바2.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/아키바3.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/아키바4.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>서브컬처 혁명, 오타쿠가 즐기는 장소</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        오타쿠 문화의 구성요소인 게임, 만화, 피규어 컬렉션과 애니메이션. 이러한 서브컬처의 발상지는 뭐니 뭐니 해도 아키하바라입니다.
+                        오타쿠들이 제각각 열중하는 가게가 많은 전기부품점 사이사이에 끼어 있습니다. 예를 들어, ‘아키하바라 라디오회관’이나
+                        ‘AKIBA 컬처즈 ZONE’에는 애니메이션, 만화, 게임 전문점이 많이 입점해 있습니다. ‘건담 카페’의 선반에는 캐릭터 상품이 산처럼 쌓여있고,
+                        ‘도쿄 레저 랜드’에는 바닥에서 천장까지 전부 캡슐토이 기계(가차폰)로 채워져 있는 등 아키하바라 특유의 게임 문화를 즐길 수 있습니다.
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/아키바5.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/아키바6.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>팝 아이돌과 팝 컬처</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        아키하바라는 일본 팝 컬처의 또 다른 막강한 요소인 ‘팝 아이돌’의 거점이기도 합니다.
+                        ‘AKB48 극장’은 현재 가장 인기 있는 아이돌 그룹 중 하나인 AKB48가 탄생한 곳이며,
+                        지금도 열렬한 팬들이 좋아하는 멤버를 잠깐이라도 보기 위해 모여들고 있습니다.
+                        코스플레이어들이 자신들이 좋아하는 캐릭터로 변신해 찾아오는 주말이라도 되면 이 거리는 거대한 인파로 붐빕니다.
+                        코스프레 스튜디오나 촬영 스튜디오에 가서 여러분도 코스프레를 즐겨 보시면 어떠세요?
+                    </p>
+                </div>
+
+
+
+
+                <div class="col-lg-10" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

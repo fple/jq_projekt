@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>전철 노선도</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<style>
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);	
+	@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);	
+	body {
+		font-family: "Helvetica Nenu", 'Nanum Gothic', Helvetica, Arial;
+	}	
+	.tokyo {
+		width: 90%;
+   	 	margin: 5px auto;
+    	display: flex;
+	}
+	a:link {
+		color:grey;
+		text-decoration: none;
+	}
+	a:visited {
+		color:grey;
+		text-decoration: none;
+	}
+	a:hover {
+		color:skyblue;
+		text-decoration: none;
+	}
+	.map-text {
+		font-size:1.3em;
+		flex:1;
+	}
+	.easysLogo {
+		font-size:1.4em;
+		font-weight:bold;
+	}
+	.intro-text h3 , .intro-img h3 {
+		font-size:1.5em;
+		font-weight:bold;
+	}
+	footer {
+		padding:20px;
+		background:#222;
+		color:white;
+	}
+	footer h4{
+		font-size:1em;
+		font-weight:800;
+	}
+        .jumbotron {
+            background-image: url('img/전철 배너.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+		.jumbotron  .col-lg-4 {
+			font-weight:bold;
+		}
+		.jumbotron  .col-lg-4 > h1{
+			font-family: 'Montserrat', sans-serif;
+			font-size:6em;
+			font-weight:bold;
+		}
+            .jumbotron .col-lg-6 > h2 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+            }		
+		.tokyoallmap {
+			max-width:100%;
+			height:auto;
+		}
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+
+
+		#g {color:orange;}
+		#a {color:red;}
+		#f {color:brown;}
+		#h {color:black;}
+		#t {color:skyblue;}
+		#z {color:purple;}
+		#c {color:lightgreen;}
+		#y {color:#c1a470;}
+		#n {color:#00ac9b;}
+	</style>
+  </head>
+  <body bgproperties="fixed">
+      <div id="fb-root"></div>
+      <script>
+          (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+
+      <nav class="navbar navbar-default" id="header">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+              </div>
+              <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                      <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                      <li class="dropdown">
+                          <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                              계절 별 및 전철노선도<b class="caret"></b>
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="spring.html">봄 관광 가이드</a></li>
+                              <li><a href="summer.html">여름 관광 가이드</a></li>
+                              <li><a href="fall.html">가을 관광 가이드</a></li>
+                              <li><a href="winter.html">겨울 관광 가이드</a></li>
+                              <li><a href="calander.html">축제`행사 캘린더</a></li>
+                              <li><a href="metro.html">전철 노선도</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="tips.html">여행 팁</a></li>
+                      <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="https://twitter.com">공유</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+
+      <div class="jumbotron" bgproperties="fixed">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-4">
+                      <h1>TOKYO METRO MAP</h1>
+                  </div>
+                  <div class="col-lg-6">
+                      <h2>도쿄 지하철 노선도</h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class=".col-lg-6">
+              <img class="tokyoallmap" src="img/metro.png">
+          </div>
+          <div class="tokyo">
+              <div class="row map-text">
+                  <h2 id="g">긴자 선 G </h2>
+                  <a href="#">오모테산도</a>
+                  <br>
+                  <a href="#">아오야마잇쵸메</a>
+                  <br>
+                  <a href="#">아카사카미츠케</a>
+                  <br>
+                  <a href="#">토라노몬</a>
+                  <br>
+                  <a href="#">신바시</a>
+                  <br>
+                  <h2 id="a">아사쿠사 선 A </h2>
+                  <a href="#">신바시</a>
+                  <br>
+                  <a href="#">니혼바시</a>
+                  <br>
+                  <a href="#">아사쿠사바시</a>
+                  <br>
+                  <a href="#">아사쿠사</a>
+                  <br>
+                  <a href="#">오시아게</a>
+                  <br>
+
+                  <h2 id="f">후쿠토신 선 F</h2>
+                  <a href="#">센카와</a>
+                  <br>
+                  <a href="#">카나메쵸</a>
+                  <br>
+                  <a href="#">조시가야</a>
+                  <br>
+                  <a href="#">히가시신주쿠</a>
+                  <br>
+                  <a href="#">신주쿠산쵸메</a>
+                  <br>
+              </div>
+
+
+              <div class="row map-text">
+                  <h2 id="h">히비야 선 H </h2>
+                  <a href="#">에비스</a>
+                  <br>
+                  <a href="#">롯폰기</a>
+                  <br>
+                  <a href="#">카스미가세키</a>
+                  <br>
+                  <a href="#">히비야</a>
+                  <br>
+                  <a href="#">긴자</a>
+                  <br>
+
+                  <h2 id="t">도자이 선 T </h2>
+
+                  <a href="#">나카노</a>
+                  <br>
+                  <a href="#">키바</a>
+                  <br>
+                  <a href="#">이타바시</a>
+                  <br>
+                  <a href="#">니시카사이</a>
+                  <br>
+                  <a href="#">니시후나바시</a>
+                  <br>
+
+                  <h2 id="z">한조몬 선 Z </h2>
+
+                  <a href="#">시부야</a>
+                  <br>
+                  <a href="#">오모테산도C</a>
+                  <br>
+                  <a href="#">오테마치</a>
+                  <br>
+                  <a href="#">스이텐구마에</a>
+                  <br>
+                  <a href="#">킨시쵸</a>
+                  <br>
+              </div>
+
+
+              <div class="row map-text">
+                  <h2 id="c">치요다 선 C </h2>
+                  <a href="#">노기자카</a>
+                  <br>
+                  <a href="#">아카사카</a>
+                  <br>
+                  <a href="#">콧카이기지도마에(국회의사당)</a>
+                  <br>
+                  <a href="#">히비야</a>
+                  <br>
+                  <a href="#">신오차노미즈</a>
+                  <br>
+                  <h2 id="y">유라쿠쵸 선 Y </h2>
+
+                  <a href="#">이케부쿠로</a>
+                  <br>
+                  <a href="#">에도가와바시</a>
+                  <br>
+                  <a href="#">이타바시</a>
+                  <br>
+                  <a href="#">유라쿠쵸</a>
+                  <br>
+                  <a href="#">신토미쵸</a>
+                  <br>
+
+                  <h2 id="n">난보쿠 선 N</h2>
+
+                  <a href="#">메구로</a>
+                  <br>
+                  <a href="#">롯폰기잇쵸메</a>
+                  <br>
+                  <a href="#">나가타쵸</a>
+                  <br>
+                  <a href="#">이치가야</a>
+                  <br>
+                  <a href="#">혼코마고메</a>
+                  <br>
+              </div>
+          </div>
+      </div>
+
+
+
+      <hr>
+
+      <footer>
+          <div class="container">
+              <h3>지역별 사이트맵</h3>
+
+              <div class="col-lg-3">
+                  <h4>도쿄 도심</h4>
+                  <dl>
+                      <dd><a href="ginza.html">긴자</a></dd>
+                      <dd><a href="akiba.html">아키하바라</a></dd>
+                      <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                      <dd><a href="nihonbashi.html">니혼바시</a></dd>
+              </div>
+              <div class="col-lg-3">
+                  <h4>도쿄 북부</h4>
+                  <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                  <dd><a href="ueno.html">우에노</a></dd>
+                  <dd><a href="nippori.html">닛포리</a></dd>
+                  <h4>도쿄 남부</h4>
+                  <dd><a href="odaiba.html">오다이바</a></dd>
+                  <dd><a href="roppongi.html">롯폰기</a></dd>
+                  <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+              </div>
+              <div class=" col-lg-3">
+                  <h4>도쿄 동부</h4>
+                  <dd><a href="asakusa.html">아사쿠사</a></dd>
+                  <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                  <h4>도쿄 서부</h4>
+                  <dd><a href="shibuya.html">시부야</a></dd>
+                  <dd><a href="shinjuku.html">신주쿠</a></dd>
+                  <dd><a href="harajuku.html">하라주쿠</a></dd>
+              </div>
+              <div class="col-lg-3">
+                  <h2><a href="메인페이지.html">메인페이지로</a></h2>
+              </div>
+          </div>
+          <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+      </footer>
+
+      <!-- jQuery 포함 -->
+      <script src="js/jquery-2.1.3.min.js"></script>
+      <!-- 부트스트랩 플러그인 포함 -->
+      <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

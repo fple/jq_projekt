@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>현지인들이 가는곳</title>
+
+  <!-- css -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/modern-business.css" rel="stylesheet">
+
+
+    <style>
+        a:link {
+            color:black;
+            text-decoration: none;
+        }
+
+
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+        .carousel-item a:link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .carousel-item a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .carousel-item a:visited {
+            color: white;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+  <!-- 나브 -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-default fixed-top" id="header">
+    <div class="container">
+      <a class="navbar-brand" href="메인페이지.html">도쿄여행안내</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="tokyomaps.html">도쿄지역별</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      계절별
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                      <a class="dropdown-item" href="spring.html">봄 관광 가이드</a>
+                      <a class="dropdown-item" href="summer.html">여름 관광 가이드</a>
+                      <a class="dropdown-item" href="fall.html">가을 관광 가이드</a>
+                      <a class="dropdown-item" href="winter.html">겨울 관광 가이드</a>
+                      <a class="dropdown-item" href="calander.html">축제`행사 캘린더</a>
+                      <a class="dropdown-item" href="metro.html">전철 노선도</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="tips.html">여행팁</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="japanese.html">현지인들이 가는 곳</a>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+          <!-- 슬라이드쇼 1 -->
+
+          <div class="carousel-item active" style="background-image: url('img/시부야메인.jpg')">
+              <div class="carousel-caption d-none d-md-block">
+                  <a href="shibuya.html"><h3>시부야, 스크램블 교차로</h3></a>
+                  <p>현대 일본문화의 중심, 스크램블 교차로</p>
+              </div>
+          </div>
+
+          <!-- 슬라이드쇼 2 -->
+          <div class="carousel-item" style="background-image: url('img/마루노우치메인.jpg')">
+              <div class="carousel-caption d-none d-md-block">
+                  <a href="marunouchi.html"><h3>도쿄역, 마루노우치</h3></a>
+                  <p>이국적인 붉은 벽돌, 빛나는 유리와 철로 만들어진 도쿄의 가장 중요한 거점</p>
+              </div>
+          </div>
+          <!-- 슬라이드쇼 3 -->
+          <div class="carousel-item" style="background-image: url('img/긴자메인.jpg')">
+              <div class="carousel-caption d-none d-md-block">
+                  <a href="ginza.html"><h3>긴자</h3></a>
+                  <p>전통과 혁신이 융합된 세련된 거리</p>
+              </div>
+          </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 본문 -->
+  <div class="container">
+
+    <h1 class="my-4">현지인들이 가는곳</h1>
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">아키하바라</h4>
+          <div class="card-body">
+              <p class="card-text">
+                  <img src="img/아키바메인.jpg" width="100%" />
+                  오타쿠 문화의 구성요소인 게임, 만화, 피규어 컬렉션과 애니메이션. 이러한 서브컬처의 발상지는 뭐니 뭐니 해도 아키하바라입니다. 오타쿠들이 제각각 열중하는 가게가 많은 전기부품점 사이사이에 끼어 있습니다. 예를 들어, ‘아키하바라 라디오회관’이나 ‘AKIBA 컬처즈 ZONE’에는 애니메이션, 만화, 게임 전문점이 많이 입점해 있습니다.
+              </p>
+          </div>
+          <div class="card-footer">
+            <a href="akiba.html" class="btn btn-primary">더보기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">아사쿠사</h4>
+          <div class="card-body">
+              <p class="card-text">
+                  <img src="img/아사쿠사메인.jpg" width="100%" />
+                  ‘가미나리몬 문’과 ‘나카미세 거리’에 있는 ‘센소지 절’을 중심으로 한 지역 아사쿠사는 물에 둘러싸여 있으며 풍부한 전통을 자랑하는 곳입니다. 강변 경치를 감상하거나 수상버스를 타고 강을 따라 크루징을 하고, 노점이나 일본 고유의 상품을 취급하는 기념품 가게들로 즐비한 전통적인 거리를 산책하기도 합니다.
+              </p>
+          </div>
+          <div class="card-footer">
+            <a href="asakusa.html" class="btn btn-primary">더보기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">우에노</h4>
+          <div class="card-body">
+              <p class="card-text">
+                  <img src="img/우에노메인.jpg" width="100%" />
+                  예술과 문화, 자연이 풍요롭고, 상인들의 활기찬 목소리도 듣기 좋은 상점가 거리
+              </p>
+          </div>
+          <div class="card-footer">
+            <a href="ueno.html" class="btn btn-primary">더보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <h2>도쿄의 명소들</h2>
+
+    <div class="row" id="ms">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="takaosan.html"><img class="card-img-top" src="img/다카오산.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="takaosan.html">다카오산</a>
+            </h4>
+            <p class="card-text">케이블카가 있는 아름답고 작은 산</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="rikugien.html"><img class="card-img-top" src="img/리쿠기엔.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="rikugien.html">리쿠기엔</a>
+            </h4>
+            <p class="card-text">정원과 찻집이 있는 클래식한 정원</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="todoroki.html"><img class="card-img-top" src="img/토도로키.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+                <a href="todoroki.html">토도로키 계곡 공원</a>
+            </h4>
+            <p class="card-text">공원, 단풍 및 정원</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="nezu.html"><img class="card-img-top" src="img/네즈.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+                <a href="nezu.html">
+                    네즈미술관
+                </a>
+            </h4>
+            <p class="card-text">미술관, 정원, 단풍, 박물관 및 건축</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="yoyogi.html"><img class="card-img-top" src="img/요요기공원.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+                <a href="yoyogi.html">요요기 공원</a>
+            </h4>
+            <p class="card-text">1964 올림픽 마을의 공원</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="kanda.html"><img class="card-img-top" src="img/칸다묘진.jpg" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+                <a href="kanda.html">
+                    에도 총진수 간다 신사 <br />(칸다묘진)
+                </a>
+            </h4>
+            <p class="card-text">신전, 일본의 애니메이션 및 역사</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- 하단 -->
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>도쿄 스카이트리</h2>
+            <p>일본에서 가장 높은 전망대 :</p>
+
+            <p>도쿄 스카이 트리는 일본 도쿄도 스미다구에 세워진 전파탑입니다.
+            본래 높이 610.58m로 계획되었으나 2009년 10월에 높이 634 m로 설계가 변경되어, 
+            캐나다의 CN 타워와 중국의 광저우타워를 제치고 세계에서 가장 높은 자립식 전파탑이 되었습니다.</p>
+            <a href="skytree.html" class="btn btn-primary">더보기</a>
+            <a href="http://www.tokyo-skytree.jp/kr/" class="btn btn-warning">도쿄 스카이트리 공식 사이트</a>
+        </div>
+      <div class="col-lg-6">
+        <img class="img-fluid rounded" src="img/스카이트리메인.jpg" alt="">
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- 최상단으로 -->
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <a class="btn btn-lg btn-secondary btn-block" href="#">최상단으로</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- 푸터 -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+                  <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <a href="ginza.html">긴자</a><br />
+                    <a href="akiba.html">아키하바라</a><br />
+                    <a href="marunouchi.html">마루노우치, 도쿄역</a><br />
+                    <a href="nihonbashi.html">니혼바시</a><br /><br />
+                    
+            </div>
+
+            <div class="col-lg-3">
+
+                <h4>도쿄 북부</h4>
+                <a href="ikebukuro.html">이케부쿠로</a><br />
+                <a href="ueno.html">우에노</a><br />
+                <a href="nippori.html">닛포리</a><br /><br />
+                <h4>도쿄 남부</h4>
+                <a href="odaiba.html">오다이바</a><br />
+                <a href="roppongi.html">롯폰기</a><br />
+                <a href="tokyotower.html">도쿄타워 주변</a><br /><br />
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <a href="asakusa.html">아사쿠사</a><br />
+                <a href="skytree.html">도쿄 스카이트리</a><br /><br />
+                <h4>도쿄 서부</h4>
+                <a href="shibuya.html">시부야</a><br />
+                <a href="shinjuku.html">신주쿠</a><br />
+                <a href="harajuku.html">하라주쿠</a><br /><br />
+            </div>
+            <div class="col-lg-3" >
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

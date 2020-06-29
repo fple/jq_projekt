@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>도쿄로 가는 방법</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/오다이바메인.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+
+        #scroll {
+            margin: 10% 10% 0 0;
+            font-size: 1.3em;
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>도쿄로 가는 방법</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <h2>당신은 부풀어있는 마음으로 나리타 공항에 도착했습니다. <br />하지만 그 다음은요?</h2>
+                    <br />
+                    <p>
+                        우리는 도쿄를 여행하려고 하면 간과하고 넘어가는 것이 있습니다. 나리타 공항에서부터 도쿄로 가는 그 과정이
+                        생각보다 거리가 멀다는 것이죠. 그래서 먼저 도쿄로 가는 방법들을 짚고 넘어가야 할 필요가 있습니다.
+                        도쿄로 가는 방법은 너무나도 많습니다. 택시, 버스, 전철, 나리타 익스프레스 등 과 같은 것들이죠.
+                        우선 어떤 수단이 있는지 살펴봅시다.
+
+                    </p>
+                </div>
+                <br />
+
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>도쿄 스카이라이너</h2>
+
+                    <div class="col-lg-11" style="margin-bottom:5%;">
+                        <img src="img/나리타에서도쿄.png" width="100%" />
+                    </div>
+
+                    <div class="col-lg-11">
+                        <table border="1" bordercolor="grey" height="280" align="center">
+                            <tr>
+                                <th bgcolor="lightgrey" width="100px">소요시간</th>
+                                <td>약 40분 (우에노 역 도착 기준)</td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">가격</th>
+                                <td>
+                                    편도 2470엔
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">배차간격</th>
+                                <td>20분</td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">운행시간</th>
+                                <td>
+                                    나리타 공항 - 도쿄 : 07:28 ~ 22:30
+                                    <br />도쿄 - 나리타공항 : 05:58 ~ 18:20
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">주요 정차역</th>
+                                <td>닛포리, 우에노</td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">특이사항</th>
+                                <td>도쿄 시내까지 가는 가장 빠른 교통수단입니다. 우에노역 까지만 운행하며 도쿄역과 신주쿠역까지는 환승해야 합니다.</td>
+                            </tr>
+                        </table>
+                        <div class="col-lg-11" style="margin-bottom:5%;">
+                            <img src="img/티켓보는법.jpg" width="100%" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>나리타 익스프레스 NEX</h2>
+
+                    <div class="col-lg-11" style="margin-bottom:5%;">
+                        <img src="img/nex.png" width="100%" />
+                    </div>
+
+                    <div class="col-lg-11">
+                        <table border="1" bordercolor="grey" height="280" align="center">
+                            <tr>
+                                <th bgcolor="lightgrey" width="100px">소요시간</th>
+                                <td>
+                                    도쿄역 : 60분 ~ 70분<br />
+                                    신주쿠역 : 80분 ~ 90분
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">가격</th>
+                                <td>
+                                    편도 3190엔 / 왕복 4000엔
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">배차간격</th>
+                                <td>30분</td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">운행시간</th>
+                                <td>
+                                    나리타 공항 - 도쿄 : 07:44 ~ 21:44
+                                    <br />도쿄 - 나리타공항 : 05:55 ~ 19:33
+                                    <br />역 별 시간은 NEX 공식 시간표 참조
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">주요 정차역</th>
+                                <td>도쿄역, 시부야역, 신주쿠역, 이케부쿠로역</td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">특이사항</th>
+                                <td>현지에서만 구매 가능하며 구매시 여권을 제시해야합니다. 왕복을 구매하면 14일 이내에 사용해야합니다.</td>
+                            </tr>
+                        </table>
+                        <div class="col-lg-11" style="margin:5% 0 5% 0;">
+                            <img src="img/NEX01.jpg" width="100%" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>나리타공항 리무진버스</h2>
+
+                    <div class="col-lg-11" style="margin-bottom:5%;">
+                        <img src="img/리무진버스.jpg" width="100%" />
+                    </div>
+
+                    <div class="col-lg-11">
+                        <table border="1" bordercolor="grey" height="280" align="center">
+                            <tr>
+                                <th bgcolor="lightgrey" width="100px">소요시간</th>
+                                <td>
+                                    도쿄역 : 1시간 30분<br />
+                                    신주쿠역 : 약 2시간
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">가격</th>
+                                <td>
+                                    편도 2500엔 ~ 3600엔 / 목적지에 따라 가격이 다름
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">배차간격</th>
+                                <td>15분 ~ 30분 / 2시간에 1대 등 목적지에 따라 간격이 다름</td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">운행시간</th>
+                                <td>
+                                    07:00 ~ 23:00
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="lightgrey">특이사항</th>
+                                <td>도쿄 시내 주요 역, 호텔까지 이동 가능하며 티켓을 구매할때 안내 받아야합니다.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-lg-10" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/takaosan.jpg">
+                            <div class="caption">
+                                <h3>다카오산</h3>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/네즈.JPG">
+                            <div class="caption">
+                                <h3>네즈미술관</h3>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/todoroki.jpg">
+                            <div class="caption">
+                                <h3>토도로키 계곡공원</h3>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

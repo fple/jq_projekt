@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>하라주쿠</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/하라주쿠메인.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+
+        #scroll {
+            margin: 10% 10% 0 0;
+            font-size: 1.3em;
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>하라주쿠</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <h2>
+                        고요한 신사의 나무, 떠들썩한 거리 : 많은 얼굴을 지닌 거리로 어서 오세요
+                    </h2>
+                    <br />
+                    <p>
+                        시부야와 신주쿠라는 대도시 분위기의 지역 사이에 끼어 있는 하라주쿠.
+                        ‘요요기 공원’의 푸른 나무와 메이지진구 신사의 수호신을 모신 울창하고 고요한 숲,
+                        ‘다케시타 거리’의 도시 소음, 그리고 부티크나 유명 레스토랑, 카페가 즐비한 차분한 느낌의 뒷골목.
+                        이곳 하라주쿠는 이 모든 것이 공존하는 다면성의 거리입니다. 하라주쿠는 상상을 초월하는 달콤한 팝뮤직과 껴안고 싶어질 정도로 귀여운 캐릭터를 좋아하는
+                        ‘Kawaii’ 문화가 점령하고 있습니다. 10대의 최신 패션을 알고 싶다면, 앞으로 대박 히트 상품이 나올 수도 있는 하라주쿠의 스트리트 문화를 꼭 보시기 바랍니다.
+                </div>
+                <br />
+
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1592819269117!6m8!1m7!1sCAoSLEFGMVFpcE11T3dVYUZ3UmpNX0dFQ2gtc0dwa1BrT3hvekZ0SlZPY0Y2N0pR!2m2!1d35.671480017346674!2d139.70305830233747!3f183.3930575285553!4f13.141093306581539!5f0.4000000000000002" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            메이지진구 신사의 경내와 요요기 공원
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            다케시타 거리의 활기와 밀려드는 감각의 홍수
+                            <br /><br />
+                        </li>
+                        <li>
+                            캣 스트리트, 우라하라주쿠의 한적한 보행자도로
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>교통편</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        가장 가까운 역은 JR 야마노테선의 ‘하라주쿠’역이지만, 도쿄메트로 지요다선 및 후쿠토신선의
+                        ‘메이지진구마에’역에서도 갈 수 있습니다.
+                        ‘하라주쿠’역에서는 아오야마 또는 오모테산도 지역까지 도보 10분, 시부야 지역까지는 도보 약 20분입니다.
+                    </p>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하네다 공항에서: ‘하라주쿠’역까지 전철로 50분.<br />
+                        나리타 공항에서: ‘하라주쿠’역까지 전철로 1시간 40분.<br />
+                        신주쿠역에서: JR 야마노테선으로 ‘하라주쿠’역까지. 소요 시간 4분.<br />
+                        도쿄역에서: JR 야마노테선으로 ‘하라주쿠’역까지. 소요 시간 26분.<br />
+                    </p>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>울창한 숲과 신성함을 경험</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘하라주쿠’역의 혼잡에서 벗어나 몇 분 정도 가면, ‘메이지진구 신사’의 엄숙한 경내 입구인 거대한 도리이(신사 정문)가 나옵니다.
+                        도리이를 지나 키가 큰 나무들 사이로 들어가면 거리의 소음이 멀어지고 기온도 내려가면서 서늘한 느낌이 듭니다.
+                        신사와 그 경내는 도시 한복판에 있는 진정한 오아시스입니다. 오전 또는 오후에 자갈이 깔린 참배길을 천천히 걷다 보면 전통 결혼식 행렬을 만날 수도 있습니다.
+                        더 걸어서 인접한 요요기 공원까지 가서 잔디밭에 뒹굴거나 주말에 개최되는 축제나 이벤트를 구경할 수도 있습니다.
+                        또한 도쿄 주민들이 어떻게 휴식을 취하는지 그 모습을 바라보는 것도 좋겠지요.
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/하라주쿠1.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/하라주쿠2.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/하라주쿠3.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/하라주쿠4.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>아이템이 꽉 찬 거리</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        350미터 이어지는 ‘다케시타 거리’의 소리와 색깔의 홍수는 40년 이상 하라주쿠의 스트리트 문화와 패션 창조에 큰 역할을 했습니다.
+                        번화한 거리에 늘어선 다수의 작은 가게들에는 Kawaii 문화의 아이템들이 산처럼 쌓여 있고,
+                        바로 이게 하라주쿠라며 환성을 지르고 싶어지는 펑크와 고딕 패션에서부터 화려한 액세서리에 이르기까지 다양한 제품을 볼 수 있습니다.
+                        여권사진을 찍는 부스의 귀여운 버전 같은 프리크라에 들어가 여행 기념 사진을 찍고, 하라주쿠에 가면 누구나 반드시 먹는,
+                        크림이 듬뿍 토핑된 달콤한 크레프를 테이크아웃하여 길거리에서 먹기도 합니다.
+                    </p>
+                </div>
+                <div class="col-lg-11">
+                    <img src="img/하라주쿠5.jpg" width="100%" style="margin:0 1% 2% 0;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/하라주쿠6.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/하라주쿠7.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/하라주쿠8.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/하라주쿠9.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>우라하라주쿠 산책</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        장난감 상자를 뒤집어 놓은 것 같은 ‘다케시타 거리’와는 대조적으로 ‘우라하라주쿠’는 비교적 차분하고 여유로운 분위기가 있습니다.
+                        어른들의 Kawaii를 찾는다면 바로 여기. 하라주쿠에서 시부야로 이어지는 ‘캣 스트리트’를 중심으로 스포츠 브랜드점과 엄선된 최신 아이템을
+                        라인업한 셀렉트숍과 함께 어른스러운 스트리트 패션 상점이 늘어서 있습니다. 또한 쇼핑뿐만 아니라 독특하고 독창적인 예술작품 전시회를 자주 개최하는
+                        ‘디자인 페스타 갤러리 하라주쿠’도 있습니다. Kawaii보다 귀여운 것을 찾는다면 ‘6% DokiDoki’로 가 보십시오. ‘키디랜드 하라주쿠점’과
+                        ‘오리엔탈 바자’도 근처에 있기 때문에 친구나 가족에게 선물할, 일본에서만 살 수 있는 기념품을 구입해서 돌아갈 수 있을 것입니다.
+                    </p>
+                </div>
+
+
+
+
+                <div class="col-lg-10" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

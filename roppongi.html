@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>롯폰기</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/롯폰기메인.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+
+        #scroll {
+            margin: 10% 10% 0 0;
+            font-size: 1.3em;
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>롯폰기</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <h2>밤이 더 화려한 거리의 새로운 얼굴</h2>
+                    <br />
+                    <p>
+                        롯폰기는 도쿄를 대표하는 밤의 거리로 확고한 지위를 지키면서 최근에는 새로운 일면도 보이고 있습니다.
+                        아트, 디자인 그리고 현대적인 쇼핑과 엔터테인먼트의 중심지로 진화한 지금, 바, 클럽, 야외 시네마 이벤트, 아트 회고전에서부터 마음을 사로잡는 세계의 음식,
+                        밤의 파노라마 뷰, 재즈 클럽에 이르기까지 모든 즐거움이 모여 있습니다.
+                    </p>
+                </div>
+                <br />
+
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1592720760290!6m8!1m7!1sdjmuk2f3KeImMacUiOhj1A!2m2!1d35.66142988719106!2d139.7289529860551!3f355.6787654817219!4f-6.243081083616559!5f0.7820865974627469" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            타워 두 곳을 둘러본다 - 롯폰기 힐즈와 도쿄 미드타운 일본과학미래관의 전시물과 각종 박물관과 미술관 방문
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            롯폰기의 현대예술과 디자인의 명소를 방문
+                            <br /><br />
+                        </li>
+                        <li>
+                            롯폰기에 있는 다채로운 레스토랑에서 요리를 만끽한다
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>교통편</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘롯폰기’역까지는 도쿄메트로 히비야선, 도에이 오에도선으로 갈 수 있습니다. 도쿄메트로 지요다선은 롯폰기의 중심지까지 걸어서 바로 갈 수 있는 ‘노기자카’역에서 내리시면 됩니다.
+                    </p>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하네다 공항에서: 리무진버스로 1시간 정도 또는 전철로 50분.<br />
+                        나리타 공항에서:  리무진버스로 약 2시간 20분, 또는 전철로 1시간 정도.<br />
+                        신주쿠역에서: 도에이 오에도선으로 ‘롯폰기’역까지 9분.
+                        도쿄역에서: 도쿄메트로 마루노우치선으로 ‘가스미가세키’역까지 가서 도쿄메트로 히비야선으로 갈아탄 후 ‘롯폰기’역까지(소요 시간 26분).<br />
+                    </p>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>롯폰기 두개의 타워</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        롯폰기의 경치는 ‘롯폰기 힐즈’와 ‘도쿄 미드타운’이라는 두 타워가 주인공입니다.
+                        두 곳 모두 쇼핑과 엔터테인먼트를 함께 즐길 수 있는 복합시설입니다.
+                        각 복합시설의 중심부에는 강철과 유리로 이루어진 타워 건물이 우뚝 솟아 있으며,
+                        세계적인 호텔인 ‘그랜드 하얏트 도쿄’와 ‘더 리츠 칼튼 도쿄’가 각각 자리잡고 있습니다.
+                        ‘롯폰기 힐즈’에 있는 ‘도쿄 시티 뷰’에서는 도쿄의 파노라마 뷰를 즐길 수 있는 실내 전망대와 야외 전망대가 있습니다.
+                        실내 전망대는 오후 11시까지 영업하고 있기 때문에 저녁식사 후에 반짝이는 보석 같은 야경을 보러 갑시다.
+                        두 타워 모두 자연의 요소가 도입되어 있기 때문에 쇼핑을 즐긴 후 일본정원을 조용히 산책할 수 있습니다. ‘
+                        롯폰기 힐즈’에 있는 ‘모리 정원’은 폭포와 식물, 나무가 있는 조용한 명소입니다.
+                        그리고 ‘도쿄 미드타운’의 ‘미드타운 가든’에서는 밤의 칵테일 파티, 야외 시네마, 계절의 마켓 등 정기적으로 야외 이벤트가 개최되고 있습니다.
+                    </p>
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/롯폰기1.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/롯폰기2.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>새로 태어난 롯폰기, 디자인과 아트의 성지</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        롯폰기는 이제 가장 인기 있는 파티 명소일 뿐만 아니라 최첨단 예술과 디자인의 거리이기도 합니다.
+                        파도가 넘실거리는 듯한 웅장한 외관의 국립 신미술관, 롯폰기 힐즈 모리 타워 53층에 있는 모리 미술관,
+                        도쿄 미드타운에 있는 산토리 미술관, 안도 다다오가 디자인한 ‘21_21 DESIGN SIGHT’ 등 모든 곳에서 아트, 사진,
+                        디자인에 대한 인상적인 전시가 열리고 있습니다. 이들 미술관들은 서로간의 거리가 가깝기 때문에 롯폰기 아트 트라이앵글을 이용해
+                        이 미술관에서 저 미술관으로 차례로 돌아보면서 하루를 보낼 수 있습니다.
+                        커피를 마시면서 현대문학을 즐기고 싶다면 해외 서적과 잡지가 폭넓게 갖추어진 카페 ‘TSUTAYA TOKYO ROPPONGI’에 가시면 됩니다.
+                    </p>
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/롯폰기3.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/롯폰기4.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/롯폰기5.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/롯폰기6.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>롯폰기의 다채로운 레스토랑</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        패스트푸드에서 고급 요리에 이르기까지 다양한 음식이 집결해 있는 롯폰기는 분위기나 예산에 맞추어 고를 수 있는 레스토랑이 많습니다.
+                        ‘롯폰기 힐즈’와 ‘도쿄 미드타운’에는 다양한 맛집들이 있으며, 그 대부분은 야외 테라스를 가지고 있습니다.
+                        또한 롯폰기 거리와 가이엔 히가시 거리에는 전통적인 일식에서부터 현대적인 정크 푸드에 이르기까지 거의 모든 메뉴를 제공하는 식당들이 있습니다.
+                        롯폰기와 니시아자부 사이에 있는 ‘곤파치’는 할리우드 영화 “킬 빌”에 나온 레스토랑과 닮은 곳으로 유명하며, 본격적인 일본 경험을 제공하고 있습니다.
+                        바 또는 클럽에 가시려면 롯폰기 교차로에서 도쿄 타워 쪽으로 가는 길 주변에서 찾으시면 됩니다.
+                    </p>
+                </div>
+
+
+
+
+                <div class="col-lg-10" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

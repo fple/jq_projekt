@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>축제 행사 캘린더</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-12 {
+                margin: 10px 0px 10px 0px;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/캘린더.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+                .jumbotron .col-lg-10 > h1 {
+                    font-family: 'Malgun Gothic';
+                    font-size: 6em;
+                    font-weight: bold;
+                }
+
+
+                /*여기부터 달력 스타일*/
+        header {
+            text-align: center;
+        }
+
+        #calendar {
+            width: 100%;
+        }
+
+            #calendar a {
+                color: #8e352e;
+                text-decoration: none;
+            }
+
+            #calendar ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            #calendar li {
+                display: block;
+                float: left;
+                width: 14.342%;
+                padding: 5px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                margin-right: -1px;
+                margin-bottom: -1px;
+            }
+
+            #calendar ul.weekdays {
+                height: 40px;
+                background: grey;
+            }
+
+                #calendar ul.weekdays li {
+                    text-align: center;
+                    text-transform: uppercase;
+                    line-height: 20px;
+                    border: none !important;
+                    padding: 10px 6px;
+                    color: #fff;
+                    font-size: 13px;
+                }
+
+            #calendar .days li {
+                height: 180px;
+            }
+
+                #calendar .days li:hover {
+                    background: #d3d3d3;
+                }
+
+            #calendar .date {
+                text-align: center;
+                margin-bottom: 5px;
+                padding: 4px;
+                background: #333;
+                color: #fff;
+                width: 30px;
+                border-radius: 50%;
+                float: right;
+            }
+
+            #calendar .event {
+                clear: both;
+                display: block;
+                font-size: 13px;
+                border-radius: 4px;
+                padding: 5px;
+                margin-top: 40px;
+                margin-bottom: 5px;
+                line-height: 14px;
+                background: #e4f2f2;
+                border: 1px solid #b5dbdc;
+                color: #009aaf;
+                text-decoration: none;
+            }
+
+            #calendar .event-desc {
+                color: #666;
+                margin: 3px 0 7px 0;
+                text-decoration: none;
+            }
+
+            #calendar .other-month {
+                background: #f5f5f5;
+                color: #666;
+            }
+
+        /* 모바일 */
+
+
+        @media(max-width: 768px) {
+
+            #calendar .weekdays, #calendar .other-month {
+                display: none;
+            }
+
+            #calendar li {
+                height: auto !important;
+                border: 1px solid #ededed;
+                width: 100%;
+                padding: 10px;
+                margin-bottom: -1px;
+            }
+
+            #calendar .date {
+                float: none;
+            }
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>FESTIVAL & EVENT CALANDER</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tokyo">
+            <div class="row map-text">
+                <div class="col-lg-11">
+                    <div id="calendar-wrap">
+                        <header>
+                            <h1>2020년 6월</h1>
+                        </header>
+                        <div id="calendar">
+                            <ul class="weekdays">
+                                <li style="background-color:crimson;">일</li>
+                                <li>월</li>
+                                <li>화</li>
+                                <li>수</li>
+                                <li>목</li>
+                                <li>금</li>
+                                <li style="background-color:cornflowerblue;">토</li>
+                            </ul>
+
+                            <!-- Days from previous month -->
+
+                            <ul class="days">
+                                <li class="day other-month">
+                                    <div class="date">31</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">1</div>
+                                    <div class="event">
+                                        <div class="event-desc">
+                                            제 36회 분쿄 수국 축제
+                                        </div>
+                                        <div class="event-time">
+                                            6월 20일 까지
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">2</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">3</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">4</div>
+                                </li>
+
+                                <!-- Days in current month -->
+
+                                <li class="day">
+                                    <div class="date">5</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">6</div>
+                            </ul>
+
+                            <!-- Row #2 -->
+
+                            <ul class="days">
+                                <li class="day">
+                                    <div class="date">7</div>
+                                    <div class="event">
+                                        <div class="event-desc">
+                                            산노마츠리
+                                        </div>
+                                        <div class="event-time">
+                                            6월 17일까지
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">8</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">9</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">10</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">11</div>
+
+                                </li>
+                                <li class="day">
+                                    <div class="date">12</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">13</div>
+                                    <div class="event">
+                                        <div class="event-desc">
+                                            반딧불축제
+                                        </div>
+                                        <div class="event-time">
+                                            6월 28일까지
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- Row #3 -->
+
+                            <ul class="days">
+                                <li class="day">
+                                    <div class="date">14</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">15</div>
+                                    <div class="event">
+                                        <div class="event-desc">
+                                            다카오산 비어마운트
+                                        </div>
+                                        <div class="event-time">
+                                            10월 15일 까지
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">16</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">17</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">18</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">19</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">20</div>
+                                </li>
+                            </ul>
+
+                            <!-- Row #4 -->
+
+                            <ul class="days">
+                                <li class="day">
+                                    <div class="date">21</div>
+                                    <div class="event">
+                                        <div class="event-desc">
+                                            무사시 미타케 신사 카구라
+                                        </div>
+                                        <div class="event-time">
+                                            당일
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">22</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">23</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">24</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">25</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">26</div>
+                                    <div class="event">
+                                        <div class="event-desc">
+                                            Conference call
+                                        </div>
+                                        <div class="event-time">
+                                            9:00am to 12:00pm
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">27</div>
+                                </li>
+                            </ul>
+
+                            <!-- Row #5 -->
+
+                            <ul class="days">
+                                <li class="day">
+                                    <div class="date">28</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">29</div>
+                                </li>
+                                <li class="day">
+                                    <div class="date">30</div>
+                                </li>
+                                <li class="day other-month">
+                                    <div class="date">1</div>
+                                </li>
+                                <li class="day other-month">
+                                    <div class="date">2</div>
+                                </li>
+                                <li class="day other-month">
+                                    <div class="date">3</div>
+                                </li>
+                                <li class="day other-month">
+                                    <div class="date">4</div>
+                                </li>
+                            </ul>
+
+                        </div><!-- /. calendar -->
+                    </div><!-- /. wrap -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

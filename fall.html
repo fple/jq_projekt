@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>계절별 가이드 - 가을</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/가을.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>계절별 가이드 : 가을</h1>
+                </div>
+                <div class="col-lg-10">
+                    <h2>무더위에서 벗어난 시원한 날씨, 붉은색의 멋진 경치</h2>
+                </div>
+            </div>
+        </div>ㅋ
+    </div>
+
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <p>
+                        가을은 피크닉이나 야외 레크리에이션에 적합한 시기입니다. 도쿄에서도 여유롭게 쉬거나 놀 수 있는 넓은 공원이 많습니다. 이 계절을 마음껏 만끽하기 위해서는 가까운 곳의 산에 당일치기로 가는 것도 좋습니다. 가벼운 하이킹과 아름다운 절경을 동시에 즐길 수 있습니다.
+                    </p>
+                </div>
+                <br>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            가을의 밤은 매우 쌀쌀해지기 때문에 스카프나 가벼운 외투를 챙기세요.
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            편한 운동화를 신고 여러 공원을 산책하거나 야외 활동을 만끽해보세요.
+                            <br /><br />
+                        </li>
+                        <li>
+                            가을철에는 산 전체가 붉고 노란 빛이 물들어 최고의 풍경사진을 찍을 수 있습니다!
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>가을의 단풍을 즐길수 있는 좋은 정원들</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        가장 인기 있는 가을의 명소는 ‘리쿠기엔 정원’입니다.
+                        정연하게 다듬어진 전통 정원이 최고의 감동적인 풍경을 제공해 드립니다.
+                        11월 중순부터 12월 초순까지 개장 시간이 밤까지 연장되고, 단풍 조명은 환상적인 아름다움을 자랑합니다.
+                        또한 에도 시대의 풍경을 보려면 ‘고이시카와 식물원’이나 ‘니노마루 정원’,
+                        ‘하마리큐 정원’을 방문해 보세요.
+                    </p>
+                </div>
+
+                <div class="col-lg-11" style="margin:0 5% 0 5%">
+                    <img src="img/가을본문1.jpg" width="45%" style="margin:0 1% 0 0; float:left;" />
+                    <img src="img/가을본문2.jpg" width="45%" style="margin:0 0 0 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>피크닉과 액티비티</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        전통적인 일본 정원은 최고의 풍경을 자랑하지만 레저나 휴식을 위한 장소라고 하기 어렵습니다.
+                        레저나 휴식까지 즐기기 위해서는 '신주쿠 교엔 정원'이 좋습니다. '신주쿠 교엔 정원'은 에도를
+                        연상시키는 분위기 뿐 아니라 매우 넓은 잔디밭도 있어 피크닉을 즐기기에 매우 적합합니다.
+                        또는 메이지진구 신사의 은행나무 가로수길을 걷는 것도 나쁘지 않습니다.
+                        더 활동적인 것을 좋아하시는 분이라면 '요요기 공원'이나 '쇼와 기념 공원'을 추천드립니다.
+                    </p>
+                </div>
+
+                <img src="img/가로수길.jpg" width="75%" style="margin:0 10% 0 10%;" />
+
+                <br />
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>멋진 절경과 당일치기 여행</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        도시 외곽에도 가을의 색으로 빛나고 있습니다. 울창한 숲으로 둘러싸인 산들이 붉고노란 빛으로 변화합니다.
+                        절경을 원하시는 분이라면 도쿄 근처의 산들 중 하나로 당일치기 여행을 추천드립니다.
+                        최고의 산책로와 전망대는 '다카오 산'과 '오야마 산' 등에서도 찾아 볼 수 있습니다.
+                        등산을 피하시는 분이라도 이곳은 많은 레저에 딱 맞고 료칸과 온천도 있기 때문에 편안하게 하루를 보내실 수 있습니다.
+                    </p>
+                </div>
+
+                <img src="img/산.jpg" width="75%" style="margin:0 10% 0 10%;" />
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>가을축제</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        현대 아트 이벤트에 관심 있는 분들도 전통 축제에 관심 있는 분들도 도쿄의 가을은 절대 실망시키지 않습니다.
+                        11월의 1주일 동안 '우에노 공원'이 '도쿄 스키페스'를 위해서 많은 준비를 거칩니다! 이 행사는 야외에서 열리는
+                        예술 축제로 뛰어난 조각품과 시설이 들어섭니다. 또한 전통 행사를 보고싶다면 9월 초에 열리는 '기치조지 가을축제'
+                        가 좋습니다. 이 흥분속에서 많은 군중들이 신위가마를 들고 풍요로운 가을을 축하합니다.
+                    </p>
+                </div>
+
+                <br />
+                <div class="col-lg-11" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

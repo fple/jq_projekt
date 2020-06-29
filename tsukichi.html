@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>나고시 대축제 ‘쓰키지 사자축제’</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-12 {
+                margin: 10px 0px 10px 0px;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/사자축제.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>나고시 대축제<br />'쓰키지 사자축제'</h1>
+                </div>
+                <div class="col-lg-10">
+                    <h2>6월 10일 ~ 6월 14일</h2>
+                </div>
+            </div>
+        </div>ㅋ
+    </div>
+
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-11">
+                    <p style="color:darkred; font-size:0.7em;">
+                        신종 코로나바이러스 감염증의 감염 확대 방지를 위해 도쿄 도내 관광 시설 등에 있어서 일시 휴업이나 영업 시간 변경을 비롯해 이벤트가 중지되거나 연기되는 경우가 있습니다.
+                        <br />
+                        최신 정보는 각 시설 또는 이벤트의 공식 홈 페이지 등을 통해 확인해 주시기 바랍니다.
+                    </p>
+                </div>
+                <br>
+
+                <div class="col-lg-11">
+                    <h2><strong>나고시 대축제 ‘쓰키지 사자축제’</strong></h2>
+                    <h4>夏越し大祭「つきじ獅子祭」</h4>
+                    <a href="https://www.google.com/maps/place/%EB%82%98%EB%AF%B8%EC%9A%94%EC%BC%80+%EC%9D%B4%EB%82%98%EB%A6%AC+%EC%8B%A0%EC%82%AC/@35.6639952,139.7726715,17.75z/data=!4m8!1m2!2m1!1z7JOw7YKk7KeAIOyLoOyCrA!3m4!1s0x0:0x4b5f3f254d0d327f!8m2!3d35.6634126!4d139.7715033">
+                        위치 보기
+                    </a>
+                    <h5>2020-6-10 ~ 2020-6-14</h5>
+
+                    <p style="font-size:0.9em; margin:10% 0 10% 0;">
+                        ※ 이벤트 일부는 개최 중지되었습니다.
+                    </p>
+                    <p style="font-size:0.9em; margin:10% 0 10% 0;">
+                        재난ㆍ액땜, 장사번창, 공사안전 기원으로 유명한 나미요케 이나리 신사.
+                        에도막부 설립(1603년) 전부터 진행되어 오던 에도(현재의 도쿄) 동남쪽 바다 매립공사에서,
+                        쓰키지 지역은 쌓은 제방이 몇 번이나 유실되던 최대의 난관 지역이었다.
+                        그런데 어느날 밤 해면에 나타난 신령스러운 물체를 모시고 제사를 지내자 풍랑이 그쳐 1659년에 드디어 공사가 완료되었다.
+                        <br />
+                        ‘쓰키지 사자축제’는 그 당시에 구름을 거느린 용, 바람을 거느린 호랑이, 한번 소리를 지르면 만물이 벌벌 떠는
+                        사자의 거대한 머리를 메고 다닌 것이 기원이라고 한다.
+                    </p>
+                </div>
+
+                <br />
+
+                <img src="img/사자축제분할.png" width="100%" />
+
+                <br />
+                <br />
+
+                <div class="col-lg-11">
+                    <table border="1" border-color="lightgrey" align="center" height="280px">
+                        <tr>
+                            <th bgcolor="lightgrey" width="100px">주소</th>
+                            <td>도쿄도 주오구 쓰키지 6-20-37</td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">개최 기간</th>
+                            <td>
+                                6월 10일 ~ 6월 14일
+                            </td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">정기 휴무</th>
+                            <td>무휴</td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">교통편</th>
+                            <td>
+                                오에도선 '쓰키지시조 역' A1 출구에서 남동쪽으로 도보 약 3분
+                            </td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">기타</th>
+                            <td>
+                                자세한 사항은 공식 홈페이지 참조하여 주시기 바랍니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">참고 링크</th>
+                            <td><a href="http://www.namiyoke.or.jp/">공식 홈페이지</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

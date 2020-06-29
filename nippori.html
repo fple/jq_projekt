@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>닛포리</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/닛포리메인.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+
+        #scroll {
+            margin: 10% 10% 0 0;
+            font-size: 1.3em;
+        }
+
+        .btn {
+            width: 100px;
+        }
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>닛포리</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <h2>전통적 직물, 역사적 사원의 경내, 1950년대 스타일의 유원지</h2>
+                    <br />
+                    <p>
+                        복고풍의 차분한 분위기를 자랑하는 우에노에 인접한 닛포리 또한 옛날 모습을 간직하고 있습니다.
+                        초현대적 건물이 즐비한 대도시 도쿄라고는 믿기지 않을 정도로 이 지역은 사람들의 정감이 넘칩니다.
+                    </p>
+                    <br />
+                    <p>
+                        DIY가 취미라면 섬유나 원단 가게들이 1km 거리에 모여 있는 ‘닛포리 섬유상가’를 추천합니다.
+                        원단, 단추, 전통적 직물까지 소량이든 도매든 저렴한 가격으로 구입할 수 있습니다.
+                        근처에는 어린이들이 좋아하는 옛날 놀이기구, 동물들과 어울릴 수 있는 동물원 그리고 물놀이 광장이 있는 ‘아라카와 유원지’도 있습니다.
+                        절을 좋아하시는 분에게는 ‘덴노지 절’과 ‘닛포리’역에서 내리면 금방 갈 수 있는 야나카 주변을 추천해 드립니다.
+                    </p>
+                </div>
+                <br />
+                <img src="img/닛포리1.jpg" width="75%" style="margin:0 10% 10% 10%;" />
+
+                <br />
+
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1592555438989!6m8!1m7!1sCAoSLEFGMVFpcE9hc3JWY0FSc1I1Y2UtMDNIUi1XQ3IyN3lQZzU5OVBYazlHSXdD!2m2!1d35.72859480062363!2d139.7711336113161!3f67.06705711178016!4f-2.449303551149441!5f0.4000000000000002" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            ‘닛포리 섬유상가’에서 대량으로 판매되는 원단
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            작은 어린이들에게 딱 좋은 추억의 ‘아라카와 유원지’
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>교통편</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘가장 가까운 역은 ‘닛포리’역이며, JR 야마노테선, 게이힌 도호쿠선, 게이세이 전철선 및 닛포리 도네리 라이너를 이용해 갈 수 있습니다.
+                    </p>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하네다 공항에서: 전철로 약 45분.<br />
+                        나리타 공항에서: 전철로 약 1시간 10분.<br />
+                        신주쿠역에서: JR 야마노테선으로 ‘닛포리’역까지. 소요 시간 25분.<br />
+                        도쿄역에서: ‘JR 야마노테선으로 ‘닛포리’역까지. 소요 시간 20분.<br />
+                    </p>
+                </div>
+
+                <img src="img/닛포리2.jpg" width="75%" style="margin:0 10% 0 10%;" />
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>흰색, 검정색, 분홍색, 보라색 등의 다양한 색깔을 지닌 우에노 공원</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        봄철 짧은 한때에 흐드러지게 피는 벚꽃의 흰색과 핑크색, 여름에 피는 연꽃의 화려한 보라색과 청색,
+                        그리고 우에노 동물원의 인기 귀염둥이인 흑백 판다에 이르기까지, 우에노 공원은 다양한 색깔을 지니고 있습니다.
+                        봄에는 벚꽃 아래에서 피크닉을 즐기는 사람들로 붐비고, 여름에는 시노바즈노이케 연못에 피는 연꽃을 촬영하기 위해 사진 애호가들이 모여듭니다.
+                        꽃을 구경하다가 지치면, 테라스 카페에 들어가 다리의 피로를 풀어 보세요. 꽃구경 할 때보다 더 많이 걸어야 하는 곳은 우에노 동물원. 고릴라, 호랑이,
+                        북극곰, 기린 등과 같은 야생동물을 전부 구경하려면 기본적으로 반나절은 걸립니다. 가장 인기 높은 동물은 흑백의 대왕판다. 귀여운 그 모습을 잠깐이라도
+                        보려면 줄을 서서 기다릴 각오를 해야 합니다.
+                    </p>
+                </div>
+
+                <div class="col-lg-10" style="margin:0 10% 0 10%">
+                    <img src="img/닛포리3.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/닛포리4.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-10" style="margin:0 10% 0 10%">
+                    <img src="img/닛포리5.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/닛포리6.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+
+
+
+                <div class=".col-lg-10" style="margin-top:50%">
+                    <h2>기타 정보</h2>
+
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

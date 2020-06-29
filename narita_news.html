@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>나리타 공항</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-12 {
+                margin: 10px 0px 10px 0px;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/공항.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+                .jumbotron .col-lg-4 > h1 {
+                    font-family: 'Malgun Gothic';
+                    font-size: 6em;
+                    font-weight: bold;
+                }
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>하네다 공항과 직결된 새 시설 ‘하네다 에어포트 가든’에서 호텔, 온천, 쇼핑을 만끽하자!</h1>
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-11">
+                    <p style="color:darkred;">신종 코로나바이러스 감염증의 감염 확대 방지를 위해 도쿄 도내 관광 시설 등에 있어서 일시 휴업이나 영업 시간 변경을 비롯해 이벤트가 중지되거나 연기되는 경우가 있습니다. 최신 정보는 각 시설 또는 이벤트의 공식 홈 페이지 등을 통해 확인해 주시기 바랍니다.</p>
+                </div>
+
+                <br>
+
+                <div class="col-lg-11">
+                    <h3><strong>일본의 현관문이 더 즐거워졌다</strong></h3>
+                    <p>
+                        ‘하네다 에어포트 가든’은 하네다 공항 제3터미널과 직결된 대형 상업시설입니다. 비행기에서 내리면 바로 보이는 2개의 특급 호텔, 최상층에서는 후지산도 보이는 천연온천, 게다가 60개 이상의 숍과 30개의 레스토랑까지 갖추고 있습니다.
+                        하네다와 도쿄 각지, 전국 주요 도시를 연결하는 버스가 발착하는 터미널, 환전ㆍ인포메이션 카운터 등을 이용할 수 있는 ‘오모테나시 센터’, 대규모 회의나 이벤트를 개최할 수 있는 홀도 갖추고 있습니다. 원하시는 용도에 따라 다양하게 이용하실 수 있습니다.
+                    </p>
+                </div>
+
+                <br />
+
+                <img src="img/공항본문사진1.jpg" width="90%" />
+
+                <br />
+
+                <div class="col-lg-11">
+                    <h3><strong>2개의 특급 호텔에 일본 최초의 공항 직결 전망 천연온천까지！</strong></h3>
+                    <p>
+                        장시간 하늘 여행의 피로는 2개의 호텔에서 말끔히 지울 수 있습니다. 1,557개 객실을 갖춘 ‘빌라 퐁텐 그랜드’에는 일본식 객실과 여성 전용 객실 등과 같은 옵션도 있습니다. 160개 객실을 갖춘 ‘빌라 퐁텐 프리미어’에는 다마가와 강이 보이는 스위트 룸도 있습니다.
+                        <br /><br />
+                        또한 옥상에는 넓이가 2,000㎡나 되는 온천 ‘이즈미텐쿠노유 하네다 공항’이 있습니다. 일본 최초로 공항과 직결된 천연온천입니다. 온천에 몸을 담그고 후지산 경치와 함께 뜨고 내리는 비행기까지 볼 수 있습니다. 호텔 투숙객이 아니더라도 입장료를 지불하시면 이용하실 수 있습니다.
+                    </p>
+                </div>
+
+                <br />
+
+                <img src="img/공항본문사진2.jpg" width="90%" />
+                <br />
+                <img src="img/공항본문분할.png" vspace="15" width="90%" />
+
+                <br />
+
+                <div class="col-lg-11">
+                    <h3><strong>패션, 여행선물, 음식 등 다채로운 즐거움</strong></h3>
+                    <p>
+                        ‘하네다 에어포트 가든’의 상업 구역에는 패션, 화장품, 여행선물 등 다양한 장르의 약 60개 숍이 들어서 있습니다. 최신의 패션 트렌드를 알고 싶다면 ‘하네다 컬렉션’에 가시면 됩니다. 일본 명산품이나 여행선물을 찾으신다면 ‘재팬 프롬나드’를 둘러보시기 바랍니다. 약이나 일용품 등을 구매하실 때도 편리합니다.
+                        <br /><br />
+                        물론 식사도 걱정하실 필요가 없습니다. 시설 내에는 30개의 레스토랑이 있습니다. 뷔페 스타일의 호텔 레스토랑에서부터 푸드 코트까지 갖추고 있으며, 일부 레스토랑은 심야까지 영업합니다.
+                        <br /><br />
+                        버스 터미널에서는 신주쿠나 시부야 등 도쿄 곳곳으로 연결해 주는 단거리 버스편 외에도 도호쿠, 긴키, 기타칸토, 호쿠리쿠, 주부 지역 등의 주요 도시로 가는 장거리 버스편도 운행합니다. 하네다에서 다음 목적지로 바로 갈 수 있어 매우 편리합니다.
+                    </p>
+                </div>
+
+                <div class="col-lg-11">
+                    <table border="1" bordercolor="grey" height="280" align="center">
+                        <tr>
+                            <th bgcolor="lightgrey" width="100px">주소</th>
+                            <td>도쿄도 오타구 하네다 공항 2-7-1</td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">영업시간</th>
+                            <td>
+                                쇼핑 구역 8:00～21:00<br>
+                                레스토랑 구역 8:00～23:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">정기휴무</th>
+                            <td>무휴</td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">교통편</th>
+                            <td>도쿄 모노레일, 게이큐선 하네다 공항 제3터미널역 도보 1분</td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">기타</th>
+                            <td>영업시간, 정기휴무, 요금 등의 최신정보는 공식 웹사이트에서 확인해 주십시오.</td>
+                        </tr>
+                        <tr>
+                            <th bgcolor="lightgrey">URL</th>
+                            <td><a href="http://www.sumitomo-rd.co.jp/lp/hanedaairport/">이동</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

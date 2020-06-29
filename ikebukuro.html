@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>이케부쿠로</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/이케부쿠로.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+
+        #scroll {
+            margin: 10% 10% 0 0;
+            font-size: 1.3em;
+        }
+
+        .btn { width : 100px; }
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index:1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>이케부쿠로</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <h2>도쿄 북부에 위치한, 현란하고 활기찬 즐거움의 거리</h2>
+                    <br />
+                    <p>
+                        이케부쿠로는 패션 소매점, 소문난 요리나 소박한 요리, 엔터테인먼트 복합시설 등이 밀집해 활기가 넘치면서도
+                        적당한 예산으로 즐길 수 있는 거리 중 하나입니다. ‘이케부쿠로’역은 ‘도부 백화점’과 ‘세이부’의 거대한 두 백화점 사이에 위치해
+                        가장 이용객 수가 많은 교통 거점 중의 하나입니다. 역에서 그다지 멀지 않은 곳에 수족관, 전망대, 레스토랑 그리고 호텔이 자리잡고 있는
+                        거대한 도시형 테마파크로서 가장 먼저 눈길을 끄는 랜드마크 ‘Sunshine City’가 있습니다. 이케부쿠로에서는 현대와 고전을 막론하고
+                        많은 문화와 예술을 만날 수 있습니다. 흥미로운 것, 맛있는 것, 24시간 영업하는 명소를 찾는다면 이케부쿠로에 가시면 됩니다.
+                    </p>
+                </div>
+                <br />
+
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1592552225387!6m8!1m7!1sQJZSHWTm9W9wxmOkpHaAdQ!2m2!1d35.72971078237959!2d139.7122880564962!3f117.32507450959599!4f-6.546967444385714!5f0.4000000000000002"
+                            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            이케부쿠로의 랜드마크 빌딩 ‘Sunshine City’에서 최신 엔터테인먼트를 즐긴다.
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            애니메이션과 만화, 인터넷 문화를 전문으로 다루는 가게들을 둘러본다.
+                            <br /><br />
+                        </li>
+                        <li>
+                            ‘이케부쿠로 니시구치 공원’ 주변에서 음악과 예술, 문화를 감상한다.
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>교통편</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘이케부쿠로’역에는 JR 쇼난 신주쿠 라인, 사이쿄선, 민간철도 도부 도조선 및 세이부 이케부쿠로선,
+                        도쿄메트로 마루노우치선, 유라쿠초선 및 후쿠토신선이 지나고 있습니다.
+                    </p>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하네다 공항에서: ‘이케부쿠로’역까지 리무진버스로 1시간 10분. 전철로 1시간.<br />
+                        나리타 공항에서: ‘이케부쿠로’역까지 리무진버스로 2시간 25분. 전철로 90분.<br />
+                        신주쿠역에서: JR 야마노테선으로 ‘이케부쿠로’역까지. 소요 시간 8분.<br />
+                        도쿄역에서: ‘이케부쿠로’역까지 JR 야마노테선으로 24분, 도쿄메트로 마루노우치선으로 17분.<br />
+                    </p>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>이케부쿠로 최고의 랜드마크 복합시설</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘Sunshine City’로 가서 최신 엔터테인먼트를 즐겨 보십시오.
+                        ‘선샤인 60’ 빌딩의 60층에 있는 ‘Sky Circus 선샤인 60 전망대’에서는 가상현실 기술을 사용하여 하늘을 날 수 있습니다.
+                        ‘선샤인 60’의 옥상에 있는 도시형 수족관에서 펭귄과 강치가 하늘을 나는 듯이 헤엄치는 모습을 밑에서 바라보거나
+                        ‘월드 임포트 마트 빌딩’의 옥상에 있는 ‘코니카미놀타 플라네타륨 “만텐”’에서는 누워서 별을 보면서 밤하늘을 여행할 수 있습니다.
+                        맛있는 음식, 즐거운 놀이, 신나는 어트랙션이 가득한 3곳의 실내 ‘타운’으로 구성된 ‘난자 타운’에도 꼭 가 보시기 바랍니다.
+                        어린이와 함께 가도 좋고 어른들끼리만 가도 좋습니다.
+                    </p>
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/ike1.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/ike2.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/ike3.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/ike4.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>아키하바라에 버금가는 서브컬처의 메카</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        이케부쿠로는 일본의 서브컬처 기여도를 보면 이미 아키하바라의 라이벌 수준까지 성장했습니다.
+                        애니메이션이나 만화, 게임 팬이라면 순정만화와 비디오 게임을 취급하는 가게들이 밀집한
+                        ‘오토메 로드’, ‘포켓몬 센터’ 그리고 ‘Evangelion Store(에반게리온 스토어)’도 꼭 방문하셔야 합니다.
+                    </p>
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/ike5.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/ike6.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/ike7.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/ike8.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>현대와 고전을 불문하고 연극, 무용, 음악을 라이브로 즐기자</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘이케부쿠로 니시구치 공원’에서는 정기적으로 라이브 음악과 야외 이벤트가 열립니다.
+                        근처에 있는 ‘도쿄예술극장’에서는 연극과 오페라, 무용 공연을 즐길 수 있습니다.
+                        ‘이케부쿠로 엔게이조’에서는 일본의 고전예능이 무대에 오릅니다.
+                        ‘신분게이자’에서는 국내외의 고전영화부터 독립영화에 이르기까지 폭넓은 영화를 상영하고 있습니다.
+                        건축을 좋아하는 분은 프랭크 로이드 라이트가 디자인한 ‘자유학원 묘니치칸’을 방문해 보십시오.
+                        지인 중에 출산 예정인 사람이 있다면 순산과 육아의 신을 모시는 ‘조시가야 기시모진 신사’ 참배를 권해 드립니다.
+                    </p>
+                </div>
+
+
+
+
+                <div class="col-lg-12" style="margin-top:5  %">
+                    <h2>기타 정보</h2>
+                </div>
+
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

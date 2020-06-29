@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>긴자</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/긴자메인.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+
+        #scroll {
+            margin: 10% 10% 0 0;
+            font-size: 1.3em;
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>긴자</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <h2>
+                        전통과 혁신이 융합된 세련된 거리
+                    </h2>
+                    <br />
+                    <p>
+                        에도시대에 은화 주조소 터에 조성된 긴자는 다른 곳에는 없는 세련된 분위기와 역사를 느낄 수 있는 거리입니다.
+                        메인 스트리트인 긴자 거리에는 전통 백화점이 즐비하고, 판매되고 있는 명품에 걸맞는 긴자만의 고품격 서비스를 찾아 지금도 많은 사람들이 방문합니다.
+                        긴자 뒤편의 골목에서는 부티크 쇼핑을 즐길 수 있으며, 작지만 맛이 일품인 비스트로 가게를 우연히 발견할 수도 있습니다.
+                        그 명성에 안주하지 않는 긴자는 시간이 지날수록 계속 진화해 왔으며, 뛰어난 문화에 기반한 현대성과 열정적인 에너지를 제공하면서도
+                        옛 시대의 매력을 간직하고 있습니다.
+                </div>
+                <br />
+
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1592901493713!6m8!1m7!1sg7mCqR9a9kpBb-wzNugS0g!2m2!1d35.67107913426909!2d139.7649736579384!3f12.171363655277984!4f13.445031669663152!5f0.4000000000000002" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            긴자의 새로운 랜드마크가 된 현대적인 쇼핑몰과 맛집 전문 복합시설
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            최첨단 아트 갤러리, 장대한 프로그램이 특징인 가부키 공연의 본고장 가부키자 극장
+                            <br /><br />
+                        </li>
+                        <li>
+                            주말에는 보행자 천국이 되는 긴자 거리 산책
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>교통편</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘긴자’역까지는 도쿄메트로 긴자선, 마루노우치선 또는 히비야선으로 갈 수 있습니다.
+                        유라쿠초선 ‘긴자 잇초메’역 또는 히비야선 ‘히가시긴자’역에서도 긴자까지 쉽게 갈 수 있습니다.
+                        JR ‘유라쿠초’역에서 긴자까지는 도보 5 분, ‘도쿄’역에서는 약 15분 걸립니다.
+                    </p>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하네다 공항에서: 리무진버스로 35분, 전철로 50분.<br />
+                        나리타 공항에서: 리무진버스로 2시간, 전철로 1시간 35분.<br />
+                        신주쿠역에서: 도쿄메트로 마루노우치선으로 ‘긴자’역까지 16분.M<br />
+                        도쿄역에서: 도쿄메트로 마루노우치선으로 ‘긴자’역까지 3분.<br />
+                    </p>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>마음껏 쇼핑하자</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        세계 각국에서 찾아오는 소비자들을 만족시키는 패션 브랜드와 레스토랑이 입점해 있는 고층 복합시설
+                        ‘Ginza Six’와 ‘도큐 플라자 긴자’의 출현으로 긴자의 전통 백화점이 달라지고 있습니다. 일본 기업도 이 개발 러시에 합류해
+                        ‘Ginza Place’의 화려한 쇼핑몰과 레스토랑의 아늑한 공간, 긴자의 ‘소니 빌딩’의 리뉴얼에 많은 자원이 투입되고 있습니다.
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/긴자1.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/긴자2.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/긴자3.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/긴자4.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>호화찬란한 예능에서 아방가르드까지, 예술의 보고</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        세련된 다양한 활동의 거점으로 알려진 긴자는 수 세기에 걸쳐 활발하게 예술공연을 육성해 왔습니다.
+                        일본의 전통예능인 가부키를 전문으로 하는 대극장 ‘가부키자’에서는 연중 다양한 공연이 무대에 오르고,
+                        가부키자의 갤러리와 숍은 그 예술성을 더 깊이 탐구할 수 있는 기회를 제공하고 있습니다. 전통의 ‘시세이도 갤러리’와 화려한
+                        ‘긴자 메종 에르메스’에서는 감동적인 전시회가 개최되고 있으며, ‘크리에이션 갤러리 G8’와 ‘긴자 그래픽 갤러리’에서는
+                        최첨단 예술에 초점을 맞춘 전시회가 개최되고 있습니다.
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/긴자5.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/긴자6.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/긴자7.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/긴자8.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>주말에 긴자 거리를 산책</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        긴자의 메인 스트리트인 긴자 거리에는 평일이면 끊임없이 줄을 지어 차량이 진입하지만,
+                        주말과 공휴일에는 차량 진입을 금지한 보행자 천국으로 변합니다. 자동차에 신경 쓰지 않고 아이쇼핑을 즐길 수 있으며,
+                        긴자 거리의 파라솔 아래 테이블에 앉아서 사람들을 구경하는 것도 긴자 주말의 즐거움입니다.
+                        보행자 천국의 시간은 4월-9월 기간의 경우 정오부터 오후 6시까지, 10월-3월 기간의 경우 정오부터 오후 5시까지입니다.
+                    </p>
+                </div>
+
+
+
+
+                <div class="col-lg-10" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

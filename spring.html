@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>계절별 가이드 - 봄</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/봄.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+            #hint {
+                background-color:lightgrey; 
+                margin:0 10% 0 10%;
+            }
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>계절별 가이드 : 봄</h1>
+                </div>
+                <div class="col-lg-10">
+                    <h2>따스한 기온으로 맑은 날씨가 계속되는 관광하기 가장 좋은 시기</h2>
+                </div>
+            </div>
+        </div>ㅋ
+    </div>
+
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <p>
+                        기온이 오르면서 기분좋게 기지개를 펴는 봄은 도쿄의 사계절 중에서 가장 멋진 시기입니다.
+                        벚꽃도 물론 좋은 볼거리이지만, 이 계절의 다양한 꽃과 축제, 음식, 행사도 도쿄 여행을 계획하는 사람들의 마음을 설레게 합니다.
+                    </p>
+                </div>
+                <br>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            일본 여행에서 봄은 가장 인파가 많은 시기이므로 일찍 예약하는 것이 좋습니다.
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            4월 말부터 5월 초에 걸쳐 이어지는 장기 연휴 시기에는 숙박 요금이 급등할 수 있습니다.
+                            <br /><br />
+                        </li>
+                        <li>
+                            스모 대회 봄 시즌같은 도쿄의 유명한 이벤트는 대부분 봄에 개최됩니다.
+                            <br /><br />
+                        </li>
+                        <li>
+                            날씨는 전반적으로 따스하지만 가끔은 비가 오는 날도 있고, 갑자기 더운  날도 있으므로 미리 대비해 두시면 좋습니다.
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>온 세상이 분홍빛</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        봄의 도쿄는 온통 분홍빛 색깔의 꽃들이 하늘을 덮고 있습니다.
+                        환상적인 벚꽃의 계절입니다.
+                        얼마 되지 않는 벛꽃이 개화하는 짧은 기간 동안 꼭 하셔야 할 것은 벚꽃구경입니다.
+                        '지도리가후치 해자' 주변의 꽃터널 아래를 산책하거나,
+                        '신주쿠 교엔 정원'에서 가족과 함께 피크닉을 즐길 수도 있고,
+                        '요요기 공원'이나 '이노카시라 공원'에서 흥겨운 파티에 참가해 보세요.
+                        피어 있는 시간이 짧기에 더 아름다운 벚꽃을 여러분도 직접 감상해 보세요.
+                    </p>
+                </div>
+
+                <img src="img/봄본문.jpg" width="75%" style="margin:0 10% 0 10%;" />
+
+                <br />
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>꽃잎에 압도당하다</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        일본인에게 벚꽃은 특별한 의미를 지니고 있어 벚꽃을 위해 술자리까지 열 정도입니다.
+                        그러나 다른 꽃들도 벚꽃 못지않게 훌륭합니다. 4월에는 '네즈 신사'의 호화로운 철쭉꽃, 5월에는
+                        ‘가메이도 덴진 신사’의 환상적인 색깔의 등꽃, 6월에는 단아하고 기품 있는 ‘고이시카와 고라쿠엔 정원’의
+                        꽃창포와 ‘스미다 공원’의 수국 등 도쿄의 봄은 꽃이 가장 기뻐하는 계절입니다.
+                    </p>
+                </div>
+
+                <br />
+
+                <div class="col-lg-9" style="margin-top:5%">
+                    <h2>축제 분위기</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        도쿄의 이벤트 달력은 4월과 5월에 다양한 이벤트로 꽉 찹니다.
+                        도쿄에서만 즐길 수 있는 경험을 들자면, 4월에 아사쿠사에서 열리는 야부사메(마상궁예) 행사가 있습니다.
+                        전통의상을 입은 궁수가 현대적인 도시를 배경으로 활을 쏘는 모습은 특별한 볼거리입니다.
+                        또 이 주변에서는 도쿄의 주요 축제 중 하나인 산자 마쓰리 축제를 볼 수 있습니다.
+                        수천 명의 관중을 사로잡는 성대하고 즐거운 이벤트입니다.
+                    </p>
+                </div>
+
+
+                <div class="col-lg-11" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

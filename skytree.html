@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>TOKYO SKYTREE</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+        body {
+            font-family: 'Nanum Gothic', Arial;
+        }
+
+        .scroll ul {
+            list-style: none;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        .tokyo {
+            display: flex;
+        }
+
+        a:link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: grey;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        .map-text {
+            font-size: 1.3em;
+            flex: 1;
+        }
+
+            .map-text .col-lg-9 {
+                margin: 0 10% 0 10%;
+            }
+
+        .easysLogo {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .intro-text h3, .intro-img h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+            footer h4 {
+                font-size: 1em;
+                font-weight: 800;
+            }
+
+        .jumbotron {
+            height: 400px;
+            background-image: url('img/스카이트리메인.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding-bottom: 0;
+        }
+
+            .jumbotron .col-lg-4 {
+                font-weight: bold;
+            }
+
+            .jumbotron .col-lg-10 > h1 {
+                font-family: 'Malgun Gothic';
+                font-size: 6em;
+                font-weight: bold;
+            }
+
+        #hint {
+            background-color: lightgrey;
+            margin: 0 10% 0 10%;
+        }
+
+        #scroll {
+            margin: 10% 10% 0 0;
+            font-size: 1.3em;
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: background-color 0.2s ease;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body bgproperties="fixed">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=348246941999715&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-default" id="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="메인페이지.html" class="navbar-brand easysLogo">도쿄여행안내</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="tokyomaps.html">도쿄 지역별</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            계절 별 및 전철노선도<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="spring.html">봄 관광 가이드</a></li>
+                            <li><a href="summer.html">여름 관광 가이드</a></li>
+                            <li><a href="fall.html">가을 관광 가이드</a></li>
+                            <li><a href="winter.html">겨울 관광 가이드</a></li>
+                            <li><a href="calander.html">축제`행사 캘린더</a></li>
+                            <li><a href="metro.html">전철 노선도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tips.html">여행 팁</a></li>
+                    <li><a href="japanese.html">현지인들이 가는 곳</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://twitter.com">공유</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>TOKYO SKYTREE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tokyo">
+
+            <div class="row map-text">
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <h2>
+                        도쿄에서 가장 높은 상징물과 엔터테인먼트의 거리
+                    </h2>
+                    <br />
+                    <p>
+                        주변 일대 어디서나 보이는 ‘도쿄 스카이트리’는 ‘도쿄 타워’를 대신하는 일본 수도의 새로운 상징입니다.
+                        가장 윗쪽으로 올라가면 도쿄 전체와 그 너머까지를 한눈에 조망할 수 있고, 날씨가 좋으면 저 멀리 후지산이 또렷하게 보입니다.
+                        현대적인 복합 상업시설인 ‘도쿄 소라마치’와 복고풍 상점가 ‘시타마치 닌조키라키라 다치바나 상점가’,
+                        그리고 다수의 흥미로운 인터랙티브 박물관 등으로 둘러싸여 있어, ‘도쿄 스카이트리’ 주변에는 타워 이외에도 다양한 볼거리가 있습니다.
+                </div>
+                <br />
+
+                <div class="col-lg-9" style="margin-bottom:5%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1592817206596!6m8!1m7!1sCAoSLEFGMVFpcE9wSE9XbW1SY3RCQzVaRTNQNDZjOXU5YWJ3TnFwdzdFZEVGSUdD!2m2!1d35.7095805!2d139.811758!3f76.72694385280342!4f-8.898391710557107!5f0.4000000000000002" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="col-lg-9" id="hint">
+                    <br />
+                    <h2>힌트</h2>
+                    <ul>
+                        <li>
+                            도쿄 스카이트리에서 고소공포증 체험하기
+                            <br /><br />
+                        </li>
+
+                        <li>
+                            소라마치에서 유행하고있는 상품과 쇼핑 그리고 식사를 즐기기
+                            <br /><br />
+                        </li>
+                        <li>
+                            철도, 버스, 담배와 소금의 박물관 둘러보기
+                            <br /><br />
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>교통편</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘도쿄 스카이트리’에 바로 가시려면 도부 스카이트리 라인으로 ‘도쿄 스카이트리’역까지 가시면 됩니다.
+                        <br />또는 도쿄메트로 한조몬선 ‘오시아게’역에서도 갈 수 있습니다.
+                    </p>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하네다 공항에서: : 셔틀버스(스카이트리 셔틀)로 약 1시간 또는 전철로 1시간 5분.<br />
+                        나리타 공항에서: 전철로 약 90분.<br />
+                        신주쿠역에서:‘도쿄 스카이트리’역까지 약 45분.<br />
+                        도쿄역에서:  ‘도쿄 스카이트리’역까지 약 35분.<br />
+                    </p>
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>고소공포증 체험</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하늘에 닿을 것만 같은 634미터의 ‘도쿄 스카이트리’는 주변 일대 어디에서나 보입니다.
+                        해가 지면 스카이트리는 ‘에도 자줏빛’, ‘하늘색’, ‘오렌지색’의 세 가지 색 중의 한 색으로 조명연출이 이루어집니다.
+                        아래에서 올려다 본 모습도 인상적이지만 위에서 내려다보는 경치는 정말 멋집니다. 도시를 한눈에 내려다볼 수 있는 전망층까지는 엘리베이터로 올라갑니다.
+                        전망층은 각각 지상 350미터와 450미터의 두 군데에 있으며, ‘도쿄 스카이트리 전망 데크’에서는 멀리 내려다보는 전망뿐만 아니라
+                        유리바닥 구역에서 바로 발아래도 볼 수 있습니다.
+                        심장이 약한 사람에게는 추천하지 않습니다. 어두워지고 난 후에도 높은 곳에서 엔터테인먼트를 즐기고 싶다면,
+                        ‘SKYTREE ROUND THEATER’로 가시면 됩니다.
+                        불행하게도 날씨가 나쁘다면 VR 헤드셋을 착용해 보시는 것도 좋겠습니다.
+                    </p>
+                </div>
+
+                <div class="col-lg-12">
+                    <img src="img/스카이트리1.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/스카이트리2.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/스카이트리3.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/스카이트리4.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>스카이트리 최고의 엔터테인먼트</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        하늘에 닿을 듯한 높이의 ‘도쿄 스카이트리’ 전망층에서 아래로 내려오면 지상의 엔터테인먼트를 찾아 ‘도쿄 소라마치’를 탐험해 봅니다.
+                        모던 감각의 패션과 액세서리, 일본 전통의 브랜드와 다양한 종류의 오리지널 기념품 등을 취급하는 300개 이상의 상점과 레스토랑이 입점해 있습니다.
+                        만약 여러분이 일본 캐릭터 팬이라면, 원하시는 모든 상품을 여기서 발견할 수 있을 것입니다. 스튜디오 지브리, 포켓몬, 헬로키티, 울트라맨 숍에 들러 한정품을
+                        구매합니다. 간편하게 들고 갈 수 있는 간식이나 전통 일본과자를 고르기도 하고, 편안하게 앉아서 본격적인 고급 일본요리를 선택하는 것도 좋겠습니다.
+                        또한 장어, 튀김, 고기와 야채가 들어간 도쿄풍 오코노미야키인 ‘몬자야키’도 고를 수 있습니다.
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/스카이트리5.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/스카이트리6.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/스카이트리7.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/스카이트리8.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+                <div class="col-lg-12">
+                    <img src="img/스카이트리9.jpg" width="45%" style="margin:0 1% 2% 0; float:left;" />
+                    <img src="img/스카이트리10.jpg" width="45%" style="margin:0 0 2% 1%; float:left;" />
+                </div>
+
+
+                <div class="col-lg-9" style="margin-top:5%;">
+                    <h2>복고풍 상점가</h2>
+                    <p style="font-size:0.9em; margin:5% 0 5% 0;">
+                        ‘도쿄 스카이트리’와 ‘도쿄 소라마치’는 빛나는 현대 일본의 대표적인 모습일 수도 있지만,
+                        이 지역은 도쿄의 오래된 서민거리이며, 주변 지역에서는 복고풍의 매력과 제2차 세계대전 이전의 향수가 느껴집니다.
+                        ‘시타마치 닌조키라키라 다치바나 상점가’를 산책하면서 90개가 넘는 상점을 둘러봅니다. 식품 관련 가게가 많습니다.
+                        만약 여러분이 그 달의 넷째 일요일에 이곳에 있다면, 유명한 아침시장 때문에 평소보다 더 혼잡할 것입니다.
+                        상점가를 벗어나 폐관 시간 전에 ‘도부 박물관’에 도착합니다. SL이나 버스 컬렉션을 가까이서 보고,
+                        전철이나 버스 시뮬레이터로 직접 운전하는 듯한 기분을 체험할 수 있습니다. ‘담배와 소금 박물관’도 그냥 지나치지 말고 꼭 들러봅니다.
+                        수 세기에 걸쳐 사람들의 생활문화에서 중요한 역할을 담당해 온 담배와 소금의 역사에 대해 오디오 가이드를 통해 배울 수 있습니다.
+                    </p>
+
+                    <h3><a href="http://www.tokyo-skytree.jp/kr/">참조 : 도쿄 스카이트리 공식사이트</a></h3>
+                </div>
+
+
+
+
+                <div class="col-lg-10" style="margin-top:5%">
+                    <h2>기타 정보</h2>
+
+                </div>
+                <div class="row intro-img">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제1.jpg" alt="산노마츠리">
+                            <div class="caption">
+                                <h3>산노마츠리</h3>
+                                <p><a href="#">2020.06.07 ~ 06.17</a></p>
+                                <a href="sannomaturi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제2.jpg" alt="수국 축제">
+                            <div class="caption">
+                                <h3>제 36회 분쿄 수국 축제</h3>
+                                <p><a href="#">2020.06.01 ~ 06.20</a></p>
+                                <a href="bunkyo.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img style="width:300px; height:200px" src="img/축제3.jpg" alt="무사시 미타케">
+                            <div class="caption">
+                                <h3>무사시 미타케 신사 카구라와 아악</h3>
+                                <p><a href="#">2020.06.21</a></p>
+                                <a href="musashi.html">자세히</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <h3>지역별 사이트맵</h3>
+
+            <div class="col-lg-3">
+                <h4>도쿄 도심</h4>
+                <dl>
+                    <dd><a href="ginza.html">긴자</a></dd>
+                    <dd><a href="akiba.html">아키하바라</a></dd>
+                    <dd><a href="marunouchi.html">마루노우치, 도쿄역</a></dd>
+                    <dd><a href="nihonbashi.html">니혼바시</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h4>도쿄 북부</h4>
+                <dd><a href="ikebukuro.html">이케부쿠로</a></dd>
+                <dd><a href="ueno.html">우에노</a></dd>
+                <dd><a href="nippori.html">닛포리</a></dd>
+                <h4>도쿄 남부</h4>
+                <dd><a href="odaiba.html">오다이바</a></dd>
+                <dd><a href="roppongi.html">롯폰기</a></dd>
+                <dd><a href="tokyotower.html">도쿄타워 주변</a></dd>
+            </div>
+            <div class=" col-lg-3">
+                <h4>도쿄 동부</h4>
+                <dd><a href="asakusa.html">아사쿠사</a></dd>
+                <dd><a href="skytree.html">도쿄 스카이트리</a></dd>
+                <h4>도쿄 서부</h4>
+                <dd><a href="shibuya.html">시부야</a></dd>
+                <dd><a href="shinjuku.html">신주쿠</a></dd>
+                <dd><a href="harajuku.html">하라주쿠</a></dd>
+            </div>
+            <div class="col-lg-3">
+                <h2><a href="메인페이지.html">메인페이지로</a></h2>
+            </div>
+        </div>
+        <p>1605021 서병진 jquery 기말 프로젝트 시작 : 2020.06.13</p>
+    </footer>
+
+    <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
